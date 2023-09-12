@@ -15,7 +15,17 @@ const instance = axios.create({
 export const getTrendingMovies = async () => {
   try {
     const response = await instance.get('/trending/movie/day');
+    console.log(response.data.results);
     return response.data.results;
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const getMovieById = async movieId => {
+  try {
+    const response = await instance.get(`/movie/${movieId}`);
+    console.log(response.data);
+    return response.data;
   } catch (error) {
     console.log(error);
   }
