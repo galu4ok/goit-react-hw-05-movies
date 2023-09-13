@@ -24,7 +24,7 @@ export const getTrendingMovies = async () => {
 export const getMovieById = async movieId => {
   try {
     const response = await instance.get(`/movie/${movieId}`);
-    console.log(response.data);
+    // console.log(response.data);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -33,8 +33,17 @@ export const getMovieById = async movieId => {
 export const getMovieCredits = async movieId => {
   try {
     const response = await instance.get(`/movie/${movieId}/credits`);
-    console.log(response.data.cast);
+    // console.log(response.data.cast);
     return response.data.cast;
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const getMovieReviews = async movieId => {
+  try {
+    const response = await instance.get(`/movie/${movieId}/reviews`);
+    console.log(response.data.results);
+    return response.data.results;
   } catch (error) {
     console.log(error);
   }

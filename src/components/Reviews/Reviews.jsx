@@ -1,17 +1,41 @@
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { getMovieReviews } from 'components/Api';
+
 const Reviews = () => {
+  const { movieId } = useParams();
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    async function loadMovieReviews() {
+      try {
+        const movieReviews = await getMovieReviews(movieId);
+        setReviews(movieReviews);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    loadMovieReviews();
+  }, [movieId]);
+
   return (
     <section>
-      <ul>
-        <li>
-          <h4>
-            Author: <b>Iм'я автора рецензії</b>
-          </h4>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, nam?
-          </p>
-          <hr />
-        </li>
-      </ul>
+      {reviews.length === 0 ? (
+        <p>We don't have any reviews for this movie.</p>
+      ) : (
+        <ul>
+          {reviews.map(({ id, author, content }) => (
+            <li key={id}>
+              <h4>
+                Author: <b>{author}</b>
+              </h4>
+              <p>{content}</p>
+              <hr />
+            </li>
+          ))}
+        </ul>
+      )}
     </section>
   );
 };
