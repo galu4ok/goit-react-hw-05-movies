@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { ImHome } from 'react-icons/im';
 import { ImFilm } from 'react-icons/im';
 import { Outlet } from 'react-router-dom';
@@ -21,7 +22,9 @@ export const SharedLayout = () => {
         </nav>
       </Header>
       <main>
-        <Outlet />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
       </main>
     </Container>
   );

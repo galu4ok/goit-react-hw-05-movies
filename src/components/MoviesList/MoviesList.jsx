@@ -1,4 +1,4 @@
-import { MoviesBoard, MoviesItem } from './MovieList.styled';
+import { MoviesBoard, MoviesItem, MoviesTitle } from './MovieList.styled';
 
 const { Link, useLocation } = require('react-router-dom');
 
@@ -12,7 +12,7 @@ const MoviesList = ({ movies }) => {
       {movies.map(({ id, title, original_name, backdrop_path }) => (
         <MoviesItem>
           <Link to={`/movies/${id}`} state={{ from: location }}>
-            <h2>{title ?? original_name}</h2>
+            <MoviesTitle>{title ?? original_name}</MoviesTitle>
             <img
               src={
                 backdrop_path
