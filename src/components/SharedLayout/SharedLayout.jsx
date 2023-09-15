@@ -8,18 +8,20 @@ export const SharedLayout = () => {
   return (
     <Container>
       <Header>
-        <nav>
-          <NavList>
-            <li>
-              <ImHome size={25} />
-              <Navigation to="/">Home</Navigation>
-            </li>
-            <li>
-              <ImFilm size={25} />
-              <Navigation to="/movies">Movies</Navigation>
-            </li>
-          </NavList>
-        </nav>
+        <NavList>
+          <li>
+            <Navigation to="/">
+              <ImHome size={20} />
+              Home
+            </Navigation>
+          </li>
+          <li>
+            <Navigation to="/movies">
+              <ImFilm size={20} />
+              Movies
+            </Navigation>
+          </li>
+        </NavList>
       </Header>
       <main>
         <Suspense fallback={<div>Loading...</div>}>

@@ -5,8 +5,8 @@ export const Container = styled.div`
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
   align-items: center;
 `;
 export const Header = styled.header`
@@ -18,19 +18,16 @@ export const Header = styled.header`
   margin-bottom: 20px;
   border-bottom: 1px solid black;
   box-shadow: 0px 1px 5px -2px rgba(0, 0, 0, 0.82);
-
-  > nav {
-    display: flex;
-  }
 `;
 export const NavList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
 `;
 export const Navigation = styled(NavLink)`
-  padding: 16px;
   border-radius: 4px;
   text-decoration: none;
   color: black;

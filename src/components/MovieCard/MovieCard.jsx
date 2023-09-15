@@ -8,12 +8,7 @@ const MovieCard = ({ movie }) => {
 
   return (
     <Wrapper>
-      <img
-        src={`${IMG_URL}${poster_path}`}
-        alt={`${title}`}
-        // width="180"
-        height="300"
-      />
+      <img src={`${IMG_URL}${poster_path}`} alt={`${title}`} height="500" />
       <MoviesDescr>
         <h2>
           {title} ({release_date.slice(0, 4)})
