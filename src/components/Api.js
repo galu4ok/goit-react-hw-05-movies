@@ -42,6 +42,19 @@ export const getMovieCredits = async movieId => {
 export const getMovieReviews = async movieId => {
   try {
     const response = await instance.get(`/movie/${movieId}/reviews`);
+    // console.log(response.data.results);
+    return response.data.results;
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const getSearchMovies = async query => {
+  try {
+    const response = await instance.get('/search/movie', {
+      params: {
+        query,
+      },
+    });
     console.log(response.data.results);
     return response.data.results;
   } catch (error) {

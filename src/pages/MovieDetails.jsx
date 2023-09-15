@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
+import { RotatingLines } from 'react-loader-spinner';
 import { getMovieById } from 'components/Api';
 import { useEffect } from 'react';
 import MovieInfo from 'components/MovieInfo/MovieInfo';
@@ -10,7 +11,7 @@ const MovieDetails = () => {
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/movies';
+  const backLinkHref = location.state?.from ?? '/';
 
   useEffect(() => {
     async function loadMovieDetails() {
@@ -26,7 +27,7 @@ const MovieDetails = () => {
   }, [movieId]);
 
   if (!selectedMovie) {
-    return <div>Loading...</div>;
+    return <RotatingLines width="80" strokeColor="#3f51b5" />;
   }
 
   return (
