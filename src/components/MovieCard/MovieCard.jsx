@@ -1,3 +1,5 @@
+import { MoviesDescr, Wrapper } from './MovieCard.styled';
+
 const IMG_URL = 'https://image.tmdb.org/t/p/w500/';
 
 const MovieCard = ({ movie }) => {
@@ -5,23 +7,29 @@ const MovieCard = ({ movie }) => {
     movie;
 
   return (
-    <div>
-      <img src={`${IMG_URL}${poster_path}`} alt={`${title}`} />
+    <Wrapper>
+      <img
+        src={`${IMG_URL}${poster_path}`}
+        alt={`${title}`}
+        // width="180"
+        height="300"
+      />
+      <MoviesDescr>
+        <h2>
+          {title} ({release_date.slice(0, 4)})
+        </h2>
+        <p>User score: {Math.floor(vote_average * 10)}%</p>
 
-      <h2>
-        {title} ({release_date.slice(0, 4)})
-      </h2>
-      <p>User score: {Math.floor(vote_average * 10)}%</p>
-
-      <h3>Overview</h3>
-      <p>{overview}</p>
-      <h3>Genres</h3>
-      <ul>
-        {genres.map(({ id, name }) => (
-          <li key={id}>{name}</li>
-        ))}
-      </ul>
-    </div>
+        <h3>Overview</h3>
+        <p>{overview}</p>
+        <h3>Genres</h3>
+        <ul>
+          {genres.map(({ id, name }) => (
+            <li key={id}>{name}</li>
+          ))}
+        </ul>
+      </MoviesDescr>
+    </Wrapper>
   );
 };
 export default MovieCard;

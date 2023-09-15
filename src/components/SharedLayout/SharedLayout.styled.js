@@ -13,7 +13,7 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 20px;
   padding: 20px;
   margin-bottom: 20px;
   border-bottom: 1px solid black;
@@ -30,7 +30,7 @@ export const NavList = styled.ul`
   display: flex;
 `;
 export const Navigation = styled(NavLink)`
-  padding: 8px 16px;
+  padding: 16px;
   border-radius: 4px;
   text-decoration: none;
   color: black;

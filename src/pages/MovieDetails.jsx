@@ -39,7 +39,7 @@ const MovieDetails = () => {
         Go back
       </GoBackButton>
       <MovieCard movie={selectedMovie} />
-      <MovieInfo movie={selectedMovie} />;
+      <MovieInfo movie={selectedMovie} />
     </section>
   );
 };
