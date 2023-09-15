@@ -1,23 +1,28 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { ImHome } from 'react-icons/im';
+import { ImFilm } from 'react-icons/im';
+import { Outlet } from 'react-router-dom';
+import { Container, Header, Navigation, NavList } from './SharedLayout.styled';
 
 export const SharedLayout = () => {
   return (
-    <>
-      <header>
+    <Container>
+      <Header>
         <nav>
-          <ul>
+          <NavList>
             <li>
-              <NavLink to="/">Home</NavLink>
+              <ImHome size={25} />
+              <Navigation to="/">Home</Navigation>
             </li>
             <li>
-              <NavLink to="/movies">Movies</NavLink>
+              <ImFilm size={25} />
+              <Navigation to="/movies">Movies</Navigation>
             </li>
-          </ul>
+          </NavList>
         </nav>
-      </header>
+      </Header>
       <main>
         <Outlet />
       </main>
-    </>
+    </Container>
   );
 };

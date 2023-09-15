@@ -1,16 +1,27 @@
 import { ImSearch } from 'react-icons/im';
+import {
+  SearchBarHeader,
+  SearchForm,
+  SearchFormButton,
+  SearchFormButtonLabel,
+  SearchFormInput,
+} from './SearchBar.styled';
 
 const SearchBar = ({ onSubmit }) => {
   return (
-    <header>
-      <form onSubmit={onSubmit}>
-        <input type="text" name="query" placeholder="Search movies..." />
-        <button type="submit">
+    <SearchBarHeader>
+      <SearchForm onSubmit={onSubmit}>
+        <SearchFormInput
+          type="text"
+          name="query"
+          placeholder="Search movies..."
+        />
+        <SearchFormButton type="submit">
           <ImSearch size={20} />
-          <span>Search</span>
-        </button>
-      </form>
-    </header>
+          <SearchFormButtonLabel>Search</SearchFormButtonLabel>
+        </SearchFormButton>
+      </SearchForm>
+    </SearchBarHeader>
   );
 };
 export default SearchBar;

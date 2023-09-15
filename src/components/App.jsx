@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
+import { SharedLayout } from './SharedLayout/SharedLayout';
 import Home from 'pages/Home';
 import MovieDetails from 'pages/MovieDetails';
 import Movies from 'pages/Movies';
 import Cast from './Cast/Cast';
 import Reviews from './Reviews/Reviews';
-import { SharedLayout } from './SharedLayout/SharedLayout';
 
 //Routing:
 //'/' – компонент Home, домашня сторінка зі списком популярних кінофільмів.

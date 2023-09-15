@@ -1,10 +1,12 @@
+import { ImArrowLeft } from 'react-icons/im';
 import { useState } from 'react';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { RotatingLines } from 'react-loader-spinner';
-import { getMovieById } from 'components/Api';
 import { useEffect } from 'react';
 import MovieInfo from 'components/MovieInfo/MovieInfo';
 import MovieCard from 'components/MovieCard/MovieCard';
+import { GoBackButton } from 'components/SharedLayout/SharedLayout.styled';
+import { getMovieById } from 'components/Api';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -32,7 +34,10 @@ const MovieDetails = () => {
 
   return (
     <section>
-      <Link to={backLinkHref}>Go back to movies list</Link>
+      <GoBackButton to={backLinkHref}>
+        <ImArrowLeft />
+        Go back
+      </GoBackButton>
       <MovieCard movie={selectedMovie} />
       <MovieInfo movie={selectedMovie} />;
     </section>
