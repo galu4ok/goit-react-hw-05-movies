@@ -31,7 +31,8 @@ const Movies = () => {
     loadMovies();
   }, [query]);
   const changeQuery = newQuery => {
-    setQuery(`${newQuery}`);
+    setQuery(newQuery);
+    setSearchParams(newQuery);
     //очищаємо при сабміті форми попередню колекцію фільмів
     setMovies([]);
   };

@@ -1,6 +1,5 @@
 import { MoviesBoard, MoviesItem, MoviesTitle } from './MovieList.styled';
-
-const { Link, useLocation } = require('react-router-dom');
+import { Link, useLocation } from 'react-router-dom';
 
 const IMG_URL = 'https://image.tmdb.org/t/p/w500/';
 
@@ -10,7 +9,7 @@ const MoviesList = ({ movies }) => {
   return (
     <MoviesBoard>
       {movies.map(({ id, title, original_name, backdrop_path }) => (
-        <MoviesItem>
+        <MoviesItem key={id}>
           <Link to={`/movies/${id}`} state={{ from: location }}>
             <MoviesTitle>{title ?? original_name}</MoviesTitle>
             <img

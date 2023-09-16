@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const MoviesBoard = styled.ul`
@@ -7,9 +6,8 @@ export const MoviesBoard = styled.ul`
   flex-wrap: wrap;
 `;
 
-export const MoviesItem = styled(Link)`
+export const MoviesItem = styled.li`
   width: 100%;
-  display: flex;
   flex-basis: calc(100% / 4 - 20px);
   margin: 10px;
 
